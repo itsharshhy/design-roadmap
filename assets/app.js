@@ -4,14 +4,63 @@
     { f: 'index.html', n: '00', t: 'Start' },
     { f: '01-taste.html', n: '01', t: 'Taste' },
     { f: '02-psychology.html', n: '02', t: 'Psychology' },
-    { f: '03-color.html', n: '03', t: 'Color' },
+    { f: '03-color.html', n: '03', t: 'Colour' },
     { f: '04-typography.html', n: '04', t: 'Type' },
     { f: '05-layout.html', n: '05', t: 'Layout' },
     { f: '06-market-research.html', n: '06', t: 'Research' },
     { f: '07-roadmap.html', n: '07', t: 'Roadmap' },
+    { f: '08-sources.html', n: '08', t: 'Sources' },
   ];
   const here = document.body.dataset.page || 'index.html';
   const idx = PAGES.findIndex(p => p.f === here);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- icon sprite (hand-drawn 24px line set) ---- */
+  const ICONS = {
+    play: '<path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"/>',
+    pause: '<rect x="6.5" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="13.5" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/>',
+    replay: '<path d="M4 12a8 8 0 1 0 2.6-5.9"/><path d="M4 4v5h5"/>',
+    eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+    search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/>',
+    bookmark: '<path d="M6 3.5h12V21l-6-4-6 4z"/>',
+    copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16V6a2 2 0 0 1 2-2h10"/>',
+    remix: '<path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/>',
+    chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
+    loop: '<path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/>',
+    check: '<path d="M5 12.5l4.5 4.5L19 7"/>',
+    grid: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>',
+    pen: '<path d="M4 20l4-1L19 8l-3-3L5 16z"/><path d="M14 7l3 3"/>',
+    brief: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4.5h6V7"/><path d="M3 13h18"/>',
+    compass: '<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',
+    rocket: '<path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 5-9 13-9 0 8-5 12-9 13z"/><circle cx="15" cy="9" r="1.6"/>',
+    alert: '<path d="M12 3.5l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5v.01"/>',
+    half: '<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/>',
+    book: '<path d="M12 6.5C10 5 7 4.5 3.5 5v13.5c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5V20"/>',
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    out: '<path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+    users: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-3.5 3.2-5.5 6.5-5.5s6 2 6.5 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14.5c2.5 0 4.2 1.6 4.5 4.5"/>',
+    blur: '<circle cx="12" cy="12" r="8.5" stroke-dasharray="2.5 3"/><circle cx="12" cy="12" r="3.5"/>',
+  };
+  const sprite = document.createElement('div');
+  sprite.style.display = 'none';
+  sprite.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg">${Object.entries(ICONS).map(([k, v]) => `<symbol id="i-${k}" viewBox="0 0 24 24">${v}</symbol>`).join('')}</svg>`;
+  document.body.prepend(sprite);
+  const ic = (n, cls = '') => `<svg class="ic ${cls}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+  document.querySelectorAll('[data-ic]').forEach(el => { el.insertAdjacentHTML('afterbegin', ic(el.dataset.ic)); });
+
+  /* ---- pointer parallax for illustrations ---- */
+  if (!reduced && matchMedia('(pointer: fine)').matches) {
+    let raf = 0;
+    addEventListener('pointermove', e => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        const r = document.documentElement.style;
+        r.setProperty('--mx', ((e.clientX / innerWidth) - .5).toFixed(3));
+        r.setProperty('--my', ((e.clientY / innerHeight) - .5).toFixed(3));
+        raf = 0;
+      });
+    }, { passive: true });
+  }
 
   /* ---- nav ---- */
   const nav = document.getElementById('nav');
@@ -67,7 +116,7 @@
   const foot = document.getElementById('foot');
   if (foot) {
     foot.className = 'foot';
-    foot.innerHTML = `<div class="wrap"><span>design/roadmap — a from-zero field guide to graphic design.</span><span class="mono">Hand-built with HTML, CSS &amp; a little JS. No templates.</span></div>`;
+    foot.innerHTML = `<div class="wrap"><span>design/roadmap — a from-zero field guide to graphic design. <a href="08-sources.html">All sources →</a></span><span class="mono">Hand-built with HTML, CSS &amp; a little JS. No templates.</span></div>`;
   }
 
   /* ---- reveal + draw ---- */
@@ -269,7 +318,70 @@
       const on = t.style.filter;
       t.style.transition = 'filter .6s';
       t.style.filter = on ? '' : 'blur(6px)';
-      squint.textContent = on ? 'Squint at it 👀' : 'Stop squinting';
+      squint.innerHTML = on ? `${ic('blur')} Squint at it` : `${ic('eye')} Stop squinting`;
     });
   }
+
+  /* ==========================================================================
+     Explainer player
+     Each object inside .ex__stage carries data-k: a JSON array of per-step
+     style keyframes. Steps are cumulative (step 3 = 0+1+2+3 merged), and CSS
+     transitions do the in-betweening. Short keys keep the markup readable.
+     ========================================================================== */
+  const MAP = { x: 'left', y: 'top', w: 'width', h: 'height', o: 'opacity', bg: 'background', c: 'color', br: 'border-radius', bc: 'border-color', ls: 'letter-spacing', fw: 'font-weight', ff: 'font-family', f: 'filter', z: 'z-index', sh: 'box-shadow', tt: 'text-transform', fst: 'font-style', b: 'border' };
+  const PCT = new Set(['x', 'y', 'w', 'h']);
+  document.querySelectorAll('.ex').forEach(fig => {
+    const stage = fig.querySelector('.ex__stage');
+    const caps = [...fig.querySelectorAll('.ex__caps li')];
+    const n = caps.length;
+    caps.forEach((c, j) => { c.dataset.n = String(j + 1).padStart(2, '0'); });
+    const dur = +(fig.dataset.dur || 3600);
+    const bar = fig.querySelector('.ex__bar i');
+    const els = [...fig.querySelectorAll('[data-k]')].map(el => ({ el, base: el.getAttribute('style') || '', k: JSON.parse(el.dataset.k) }));
+    let i = 0, timer = 0, playing = false, userPaused = reduced;
+
+    const apply = idx => {
+      stage.dataset.step = idx;
+      els.forEach(({ el, base, k }) => {
+        const st = {};
+        for (let j = 0; j <= idx; j++) if (k[j]) Object.assign(st, k[j]);
+        let css = base, r = 0, s = 1, tx = 0, ty = 0;
+        for (const [key, v] of Object.entries(st)) {
+          if (key === 'r') r = v; else if (key === 's') s = v;
+          else if (key === 'tx') tx = v; else if (key === 'ty') ty = v;
+          else if (key === 't') { if (el.textContent !== v) el.textContent = v; }
+          else if (key === 'html') { if (el._h !== v) { el.innerHTML = v; el._h = v; } }
+          else if (key === 'fs') css += `;font-size:${v}cqw`;
+          else if (key === 'd') css += `;transition-delay:${v}ms`;
+          else css += `;${MAP[key] || key}:${typeof v === 'number' && PCT.has(key) ? v + '%' : v}`;
+        }
+        css += `;transform:translate(${tx}%,${ty}%) rotate(${r}deg) scale(${s})`;
+        el.setAttribute('style', css);
+      });
+      caps.forEach((c, j) => c.classList.toggle('on', j === idx));
+      fig.style.setProperty('--dur', (idx === n - 1 ? dur * 1.5 : dur) + 'ms');
+      bar.classList.remove('run'); void bar.offsetWidth;
+      if (playing) bar.classList.add('run');
+    };
+    const schedule = () => {
+      clearTimeout(timer);
+      if (playing) timer = setTimeout(() => { i = (i + 1) % n; apply(i); schedule(); }, i === n - 1 ? dur * 1.5 : dur);
+    };
+    const play = () => { if (playing) return; playing = true; fig.classList.add('is-playing'); apply(i); schedule(); };
+    const pause = () => { playing = false; fig.classList.remove('is-playing'); clearTimeout(timer); bar.classList.remove('run'); };
+
+    fig.classList.add('ex--init'); apply(0); void stage.offsetWidth; fig.classList.remove('ex--init');
+
+    fig.querySelector('[data-ex-play]').addEventListener('click', () => {
+      if (playing) { userPaused = true; pause(); } else { userPaused = false; play(); }
+    });
+    fig.querySelector('[data-ex-replay]').addEventListener('click', () => {
+      userPaused = false; pause(); i = 0; apply(0); play();
+    });
+    caps.forEach((c, j) => c.addEventListener('click', () => { i = j; apply(i); schedule(); }));
+
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !userPaused) play(); else if (!e.isIntersecting) pause();
+    }, { threshold: .4 }).observe(stage);
+  });
 })();

@@ -14,6 +14,11 @@ A research-backed, explain-like-I'm-10 field guide to **graphic design from abso
 | 05 | [Layout](05-layout.html) | C.R.A.P., hierarchy toggle and squint test, grids, composition, whitespace |
 | 06 | [Market research](06-market-research.html) | How people decide, Kano model, research methods, brand-personality sliders, brief template, job market data |
 | 07 | [Roadmap](07-roadmap.html) | 12-month plan with a progress tracker saved in your browser, books, tools and a glossary |
+| 08 | [Research library](08-sources.html) | 32 studies, standards and frameworks rated by strength of evidence, with source links |
+
+## Motion explainers
+
+Every page opens with a 30-second animated explainer (a storyboard that plays when it scrolls into view, with play/pause, replay and clickable steps). They're built with a tiny keyframe engine in `assets/app.js`: each object carries a `data-k` JSON array of per-step styles and CSS transitions do the in-betweening. Respects `prefers-reduced-motion`.
 
 ## Run it
 
