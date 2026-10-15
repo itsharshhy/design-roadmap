@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Typography — design/roadmap</title>
+<link rel="stylesheet" href="assets/style.css?v=2">
+<style>
+  .cls { border-top: 1.5px solid var(--ink); padding: 1.4rem 0; display:grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; align-items: center; }
+  .cls .s { font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1; letter-spacing: -.02em; transition: transform .6s var(--ease); }
+  .cls:hover .s { transform: translateX(10px); }
+  @media (max-width:700px){ .cls{grid-template-columns:1fr; gap:.6rem} }
+  #measureText { transition: max-width .3s var(--ease), line-height .3s; font-size: 1.05rem; }
+  .pair { border:1.5px solid var(--ink); border-radius: 16px; padding: 1.6rem; background: var(--paper); }
+  .pair .h { font-size: 2rem; line-height: 1.05; margin-bottom: .6rem; }
+  .pair .b { font-size: .98rem; line-height: 1.55; margin: 0 0 1rem; }
+  .kern { font-family: var(--display); font-size: clamp(3rem, 9vw, 6rem); line-height: 1; letter-spacing: -.02em; transition: letter-spacing .8s var(--ease); }
+  .kern:hover { letter-spacing: .25em; }
+</style>
+</head>
+<body data-page="04-typography.html">
+<header id="nav"></header>
+<main>
+
+<header class="chap">
+  <div class="wrap chap__grid">
+    <div>
+      <div class="chap__num">04</div>
+      <span class="kicker">Chapter four</span>
+      <h1>Type is the <em class="serif-i hl-blue">voice</em> of your words.</h1>
+      <p class="lede">About 95% of the web is text, a line often credited to designer Oliver Reichenstein. The same sentence in two fonts can sound like a lawyer or a clown. Typography is how you choose the voice.</p>
+    </div>
+    <div class="chap__art" style="display:grid;place-items:center" aria-hidden="true">
+      <div class="specimen" title="hover me">Ag</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">4.1 · Words first</span><h2 class="rv">Typeface, font, <em class="serif-i">what?</em></h2></div>
+    <div>
+      <p class="lede rv">A <strong>typeface</strong> is the design (Helvetica). A <strong>font</strong> is one specific file of it (Helvetica Bold Italic). A <strong>family</strong> is all the weights and styles together. Most people say "font" for everything, and that's fine.</p>
+      <div class="eli rv">
+        <span class="eli__label">Explain like I'm 10</span>
+        <p>A typeface is like a singer. Fonts are that singer whispering, shouting or singing in a deep voice. Same person, different moods.</p>
+      </div>
+      <h3 class="rv" style="margin-top:2.5rem">The anatomy of a letter</h3>
+      <svg viewBox="0 0 700 300" class="rv" style="margin-top:1rem" aria-label="Diagram of type anatomy: cap height, x-height, baseline, descender">
+        <g stroke="#16130F" stroke-width="1" stroke-dasharray="4 4" opacity=".5">
+          <line x1="0" y1="50" x2="700" y2="50"/><line x1="0" y1="110" x2="700" y2="110"/><line x1="0" y1="210" x2="700" y2="210"/><line x1="0" y1="265" x2="700" y2="265"/>
+        </g>
+        <text x="40" y="210" font-family="Fraunces" font-size="220" fill="#16130F" letter-spacing="-6">Hxgo</text>
+        <g font-family="JetBrains Mono" font-size="12" fill="#E2462B">
+          <text x="560" y="45">cap height</text>
+          <text x="560" y="105">x-height</text>
+          <text x="560" y="205">baseline</text>
+          <text x="560" y="260">descender</text>
+        </g>
+        <circle cx="465" cy="168" r="30" fill="none" stroke="#2340D8" stroke-width="2.5"/>
+        <text x="420" y="295" font-family="JetBrains Mono" font-size="12" fill="#2340D8">counter (the hole)</text>
+        <circle cx="54" cy="208" r="16" fill="none" stroke="#1F5C4A" stroke-width="2.5"/>
+        <text x="10" y="295" font-family="JetBrains Mono" font-size="12" fill="#1F5C4A">serif (the little foot)</text>
+      </svg>
+      <p class="rv" style="margin-top:1rem">The <strong>x-height</strong> matters most for beginners. Fonts with a tall x-height look bigger and read better at small sizes. That's why UI fonts usually have one.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band-2">
+  <div class="wrap">
+    <span class="kicker">4.2 · The families</span>
+    <h2 class="rv" style="margin-top:1rem">Five personalities to know</h2>
+    <p class="lede rv">There are hundreds of thousands of fonts, but almost all of them fall into a handful of groups. Each group carries a mood.</p>
+    <div style="margin-top:2rem">
+      <div class="cls rv"><div><h4>Serif</h4><p class="muted" style="margin:0">Little feet on the strokes. Descends from Roman stone carving and old printing. Feels <strong>traditional, trustworthy, literary, premium</strong>. Used by the New York Times, Vogue and law firms.</p></div><div class="s" style="font-family:Georgia,'Times New Roman',serif">Timeless story</div></div>
+      <div class="cls rv"><div><h4>Sans-serif</h4><p class="muted" style="margin:0">No feet. Became popular in the 20th century. Feels <strong>modern, clean, neutral, friendly</strong>. The default for apps and tech: Google, Airbnb, Spotify.</p></div><div class="s" style="font-family:'Instrument Sans',Helvetica,Arial,sans-serif;font-weight:600">Modern product</div></div>
+      <div class="cls rv"><div><h4>Slab serif</h4><p class="muted" style="margin:0">Chunky, block-like serifs. Feels <strong>sturdy, confident, a bit retro</strong>. Common on posters and in Western and industrial vibes.</p></div><div class="s" style="font-family:Rockwell,'Roboto Slab','Courier New',serif;font-weight:700">Built Tough</div></div>
+      <div class="cls rv"><div><h4>Script</h4><p class="muted" style="margin:0">Looks handwritten. Feels <strong>personal, elegant or playful</strong>. Wedding invites, bakeries, signatures. Never use it for body text.</p></div><div class="s" style="font-family:'Brush Script MT','Segoe Script',cursive">With love, Maya</div></div>
+      <div class="cls rv"><div><h4>Monospace</h4><p class="muted" style="margin:0">Every letter is the same width, like a typewriter. Feels <strong>technical, honest, nerdy</strong>. Code, tech brands, editorial labels like the ones on this site.</p></div><div class="s" style="font-family:var(--mono);font-size:clamp(1.8rem,4.5vw,3.4rem)">sys.boot()</div></div>
+      <div class="cls rv"><div><h4>Display</h4><p class="muted" style="margin:0">Made to be big: headlines and logos. Can be wild. Feels like <strong>whatever it was designed to feel</strong>. Use it once per design, at large sizes only.</p></div><div class="s" style="font-family:Impact,'Arial Black',sans-serif;letter-spacing:0;text-transform:uppercase">SALE ENDS!</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">4.3 · Type psychology</span><h2 class="rv">Fonts change what people <em class="serif-i">believe</em></h2></div>
+    <div>
+      <div class="study rv">
+        <span class="study__label">Research · Font appropriateness</span>
+        <p>Doyle &amp; Bottomley found people were more likely to choose a brand when the font "fit" the product (a sturdy font for a tough product, a delicate one for a soft one) than when it didn't, even with identical names.</p>
+        <cite>Doyle, J. R. &amp; Bottomley, P. A. (2004). Font appropriateness and brand choice. Journal of Business Research, 57(8).</cite>
+      </div>
+      <div class="study rv">
+        <span class="study__label">Research · Typefaces have personas</span>
+        <p>Brumberger showed readers consistently assign personalities to typefaces ("elegant", "friendly", "direct"). When the font's persona clashes with the text's tone, the message feels off.</p>
+        <cite>Brumberger, E. R. (2003). The rhetoric of typography: The persona of typeface and text. Technical Communication, 50(2).</cite>
+      </div>
+      <div class="study rv">
+        <span class="study__label">Research · Hard to read = hard to do</span>
+        <p>When exercise instructions were printed in a hard-to-read font, people estimated the routine would take nearly twice as long and were less willing to try it. Readability changes how difficult things <em>feel</em>.</p>
+        <cite>Song, H. &amp; Schwarz, N. (2008). If it's hard to read, it's hard to do. Psychological Science, 19(10).</cite>
+      </div>
+      <div class="eli eli--r rv">
+        <span class="eli__label">Explain like I'm 10</span>
+        <p>If your doctor wrote your prescription in bubbly party letters, you'd worry. If a birthday invite looked like a tax form, nobody would come. The letters have to match the moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <span class="kicker">4.4 · Readability lab</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:18ch">Line length and spacing, <em class="serif-i" style="color:var(--yellow)">felt</em></h2>
+    <p class="lede rv">Robert Bringhurst's classic <em>The Elements of Typographic Style</em> recommends roughly <strong>45–75 characters per line</strong> for body text, with about 66 as ideal. Move the sliders and feel the difference.</p>
+    <div class="demo rv" style="color:var(--ink)">
+      <div class="demo__bar"><span class="dots"><i></i><i></i><i></i></span><span>Measure &amp; leading</span></div>
+      <div class="demo__body">
+        <div class="controls">
+          <label>Line length (ch) <input type="range" id="measure" min="20" max="140" value="66"></label>
+          <label>Line height <input type="range" id="leading" min="1" max="2.4" step=".05" value="1.55"></label>
+        </div>
+        <p id="measureLabel" class="mono" style="max-width:none;font-size:.82rem"></p>
+        <p id="measureText">Typography exists to honour content. When the line is too long, the eye loses its place on the way back to the start of the next line. When it's too short, the reader is constantly interrupted and the rhythm turns choppy. Good leading, the space between lines, gives each line room to breathe without letting the paragraph fall apart. Change the sliders and notice how quickly reading goes from effortless to tiring. Nobody will ever compliment you on good line length, but everybody feels bad line length.</p>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:2rem">
+      <div class="card rv"><h4>Leading</h4><p>Space between lines. Body text: 1.4–1.6× the font size. Big headlines: tighter, 1.0–1.15×.</p></div>
+      <div class="card rv rv-d1"><h4>Tracking</h4><p>Even spacing across a whole word or line. Add a little to ALL CAPS and tiny labels. Remove a little from big headlines.</p></div>
+      <div class="card rv rv-d2"><h4>Kerning</h4><p>Space between one specific pair of letters, like "AV" or "To". Matters in logos and huge headlines.</p></div>
+    </div>
+    <div class="kern rv" style="margin-top:2.5rem;color:var(--yellow)" title="hover me">Tracking</div>
+    <p class="muted mono" style="font-size:.8rem">↑ hover to over-track it. Too much spacing breaks words apart.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">4.5 · Type scale</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:18ch">Sizes that <em class="serif-i">belong</em> together</h2>
+    <p class="lede rv">Don't pick sizes randomly (14, 17, 23, 31...). Pick a base size and multiply by a fixed ratio. Musical ratios like the "major third" (1.25) or "perfect fourth" (1.333) make sizes feel related, like notes in a chord.</p>
+    <div class="demo rv">
+      <div class="demo__bar"><span class="dots"><i></i><i></i><i></i></span><span>Type scale generator</span></div>
+      <div class="demo__body">
+        <div class="controls">
+          <label>Base size <span id="baseVal" class="mono"></span><input type="range" id="baseSize" min="12" max="22" value="16"></label>
+          <label>Ratio <select id="ratioSel">
+            <option value="1.125">1.125 · Major second (subtle)</option>
+            <option value="1.2">1.200 · Minor third</option>
+            <option value="1.25" selected>1.250 · Major third</option>
+            <option value="1.333">1.333 · Perfect fourth</option>
+            <option value="1.5">1.500 · Perfect fifth (dramatic)</option>
+            <option value="1.618">1.618 · Golden ratio</option>
+          </select></label>
+          <label>Font <select id="scaleFont">
+            <option value="Fraunces, serif">Fraunces (serif)</option>
+            <option value="'Instrument Sans', sans-serif">Instrument Sans (sans)</option>
+            <option value="'JetBrains Mono', monospace">JetBrains Mono (mono)</option>
+          </select></label>
+          <label style="flex:1;min-width:220px">Your text <input id="scaleText" type="text" value="Design is thinking made visual" style="font:500 1rem var(--body);padding:.55rem .8rem;border:1.5px solid var(--ink);border-radius:10px;background:var(--paper)"></label>
+        </div>
+        <div id="scaleOut"></div>
+      </div>
+    </div>
+    <p class="rv muted">Rule of thumb: apps and dense interfaces suit small ratios (1.125–1.25). Posters and editorial landing pages suit big ones (1.333–1.618).</p>
+  </div>
+</section>
+
+<section class="band-2">
+  <div class="wrap">
+    <span class="kicker">4.6 · Pairing</span>
+    <h2 class="rv" style="margin-top:1rem">How to pair fonts without <em class="serif-i">crying</em></h2>
+    <div class="grid g2" style="margin-top:2rem">
+      <ol class="steps">
+        <li class="rv"><div><h4>Start with one family</h4><p>One good family with several weights can do everything. Pairing is optional, not required.</p></div></li>
+        <li class="rv"><div><h4>Two maximum</h4><p>One for headlines (personality), one for body (readability). A third is almost always a mistake.</p></div></li>
+        <li class="rv"><div><h4>Contrast, don't conflict</h4><p>Pair things that are clearly different (serif + sans), never <em>almost</em> the same (two similar sans-serifs look like an accident).</p></div></li>
+        <li class="rv"><div><h4>Match the bones</h4><p>Look for similar x-height and proportions so they sit together nicely on a line.</p></div></li>
+        <li class="rv"><div><h4>Steal from the pros</h4><p>Fonts In Use shows real pairings by real designers. Start there instead of guessing.</p></div></li>
+      </ol>
+      <div class="grid" style="gap:1rem">
+        <div class="pair rv"><div class="h" style="font-family:Fraunces,serif;font-weight:500">The quiet power of small things</div><p class="b" style="font-family:'Instrument Sans',sans-serif">A soft serif headline over a clean sans body. Editorial, warm and trustworthy.</p><span class="tag">Serif + Sans · editorial</span></div>
+        <div class="pair rv rv-d1"><div class="h" style="font-family:'Instrument Sans',sans-serif;font-weight:700;letter-spacing:-.03em">Ship faster. Sleep better.</div><p class="b" style="font-family:'Instrument Sans',sans-serif">One sans family, bold vs regular. Clean product and SaaS energy.</p><span class="tag">One family · product</span></div>
+        <div class="pair rv rv-d2" style="background:var(--ink);color:var(--paper)"><div class="h" style="font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:600">// LAUNCH_DAY_03</div><p class="b" style="font-family:Fraunces,serif;font-style:italic;font-size:1.15rem">A mono label with an italic serif body. Techy but human.</p><span class="tag">Mono + Serif · editorial-tech</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">4.7 · Where fonts live</span><h2 class="rv">Getting fonts (legally)</h2></div>
+    <div>
+      <div class="tbl-wrap rv">
+      <table class="tbl">
+        <thead><tr><th>Where</th><th>Cost</th><th>Good for</th></tr></thead>
+        <tbody>
+          <tr><td><b>Google Fonts</b></td><td>Free, open licence</td><td>Learning and most projects. Try: Fraunces, DM Serif, Space Grotesk, Instrument Sans, Bricolage Grotesque.</td></tr>
+          <tr><td><b>Fontshare</b> (Indian Type Foundry)</td><td>Free for commercial use</td><td>High quality modern sans and serifs: Satoshi, General Sans, Clash Display, Erode.</td></tr>
+          <tr><td><b>Adobe Fonts</b></td><td>Included with Creative Cloud</td><td>Huge professional library.</td></tr>
+          <tr><td><b>Independent foundries</b></td><td>Paid licences</td><td>Klim, Grilli Type, Commercial Type, Pangram Pangram, Displaay. The fonts behind big brands.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="study study--warn rv">
+        <span class="study__label">Heads up · Licences</span>
+        <p>A font is software. "Free for personal use" means you <strong>can't</strong> use it for a client or anything you sell. Always check the licence before shipping.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-yellow">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--ink)">Your missions</span>
+    <h2 class="rv" style="margin-top:1rem">Homework</h2>
+    <ol class="steps" style="margin-top:2rem">
+      <li class="rv"><div><h4>Type walk</h4><p>Photograph 20 signs, menus and labels. Sort them into serif, sans, slab, script, mono and display.</p></div></li>
+      <li class="rv"><div><h4>One sentence, five voices</h4><p>Set "We're open late tonight" in five fonts. Write down the kind of business each one sounds like.</p></div></li>
+      <li class="rv"><div><h4>Play the games</h4><p>KernType and Shape Type (method.ac) train your eye for spacing and letterforms in minutes.</p></div></li>
+      <li class="rv"><div><h4>Copy a magazine page</h4><p>Recreate one magazine spread's typography exactly in Figma: sizes, leading, spacing.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+<div id="next"></div>
+<footer id="foot"></footer>
+<script src="assets/app.js?v=2"></script>
+</body>
+</html>

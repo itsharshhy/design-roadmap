@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Market research — design/roadmap</title>
+<link rel="stylesheet" href="assets/style.css?v=2">
+<style>
+  .slider-row { display:grid; grid-template-columns: 7rem 1fr 7rem; gap: 1rem; align-items:center; padding:.65rem 0; border-bottom:1px dashed var(--line); font-weight:600; }
+  .slider-row span:last-child { text-align:right; }
+  .slider-row input { width:100%; }
+  #dirOut { display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.8rem; }
+  #dirCard { border-radius: 16px; padding: 1.8rem; min-height: 260px; display:flex; flex-direction:column; justify-content:space-between; transition: all .6s var(--ease); border:1.5px solid var(--ink); }
+  #dirCard .t { font-size: 2.6rem; line-height: 1; transition: all .6s var(--ease); }
+  #dirPal { display:flex; gap:.4rem; }
+  #dirPal i { flex:1; height: 36px; border-radius: 8px; border: 1px solid rgba(0,0,0,.15); transition: background .6s; }
+  @media (max-width:760px){ #dirOut{grid-template-columns:1fr} .slider-row{grid-template-columns:5rem 1fr 5rem; font-size:.85rem} }
+  .brief { background: var(--paper); border:1.5px solid var(--ink); border-radius: 16px; padding: 2rem; font-family: var(--mono); font-size: .88rem; line-height: 1.7; white-space: pre-wrap; position: relative; }
+  .brief button { position:absolute; top:1rem; right:1rem; }
+  .kano { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
+  @media (max-width:760px){ .kano{grid-template-columns:1fr} }
+</style>
+</head>
+<body data-page="06-market-research.html">
+<header id="nav"></header>
+<main>
+
+<header class="chap">
+  <div class="wrap chap__grid">
+    <div>
+      <div class="chap__num">06</div>
+      <span class="kicker">Chapter six</span>
+      <h1>Find out what people <em class="serif-i hl-red">actually</em> want.</h1>
+      <p class="lede">Clients rarely know what they want, and users rarely say what they need. Research is how designers stop guessing. Here's how professionals uncover the colours, styles and feelings a project needs before drawing anything.</p>
+    </div>
+    <svg class="chap__art" viewBox="0 0 400 400" aria-hidden="true">
+      <rect x="50" y="60" width="300" height="280" rx="18" fill="#F3EDE2" stroke="#16130F" stroke-width="3"/>
+      <g class="draw">
+        <polyline points="80,290 140,240 190,260 250,170 320,120" fill="none" stroke="#E2462B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <g fill="#16130F"><circle cx="80" cy="290" r="7"/><circle cx="140" cy="240" r="7"/><circle cx="190" cy="260" r="7"/><circle cx="250" cy="170" r="7"/><circle cx="320" cy="120" r="9" class="pulse"/></g>
+      <g class="float"><rect x="230" y="20" width="130" height="70" rx="14" fill="#F0B42E" stroke="#16130F" stroke-width="3"/><text x="248" y="62" font-family="Fraunces" font-style="italic" font-size="22" fill="#16130F">why tho?</text></g>
+      <g class="float d2"><circle cx="70" cy="330" r="40" fill="#2340D8"/><text x="52" y="342" font-family="Fraunces" font-size="36" fill="#F3EDE2">?</text></g>
+    </svg>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">6.1 · The big picture</span><h2 class="rv">Design research has <em class="serif-i">three</em> targets</h2></div>
+    <div>
+      <div class="grid g3 rv">
+        <div class="card card--flat"><h4 class="hl-red">The business</h4><p>What does the client need to achieve? More sales, a new audience, looking more premium?</p></div>
+        <div class="card card--flat"><h4 class="hl-blue">The people</h4><p>Who is it for? What do they care about, fear and already love? Where will they see it?</p></div>
+        <div class="card card--flat"><h4 class="hl-green">The market</h4><p>What are competitors doing? What's overused? Where's the empty space to stand in?</p></div>
+      </div>
+      <p class="rv" style="margin-top:2rem">Good design sits where all three overlap. A gorgeous logo that ignores the audience fails. A safe logo that looks like every competitor fails too.</p>
+      <div class="eli rv">
+        <span class="eli__label">Explain like I'm 10</span>
+        <p>Before you buy a birthday present, you find out what your friend likes, what you can afford, and what everyone else is already giving them. That's market research!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <span class="kicker">6.2 · How people decide</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:20ch">People are bad at telling you what they want. <em class="serif-i" style="color:var(--yellow)">Watch</em> instead.</h2>
+    <div class="grid g3" style="margin-top:2.5rem">
+      <div class="card rv"><h4>Say ≠ do</h4><p>Economists call it <em>stated vs revealed preference</em>. People say they want "clean and minimal" and then click the loud, colourful one. Trust behaviour over opinions.</p></div>
+      <div class="card rv rv-d1"><h4>Jobs to be done</h4><p>Clayton Christensen's idea: people "hire" products to do a job. His team found many morning milkshakes were bought to make a boring commute bearable. Ask what job your design is hired for.</p></div>
+      <div class="card rv rv-d2"><h4>Faster horses</h4><p>"If I'd asked people what they wanted, they'd have said faster horses." It's usually credited to Henry Ford, though there's no proof he said it. The point stands: ask about problems, not solutions.</p></div>
+    </div>
+    <h3 class="rv" style="margin-top:4rem">The Kano model: three kinds of wants</h3>
+    <p class="rv lede">Professor Noriaki Kano (1984) showed that features affect happiness in different ways:</p>
+    <div class="kano">
+      <div class="card rv"><span class="tag">Must-have</span><h4 style="margin-top:.8rem">Basic needs</h4><p>Nobody thanks you for them, but everyone's angry if they're missing. Readable text, working buttons, correct logo.</p></div>
+      <div class="card rv rv-d1"><span class="tag">More = better</span><h4 style="margin-top:.8rem">Performance</h4><p>The better you do, the happier people get. Faster, clearer, easier to find.</p></div>
+      <div class="card rv rv-d2" style="border-color:var(--yellow)"><span class="tag" style="color:var(--yellow)">Wow</span><h4 style="margin-top:.8rem">Delighters</h4><p>Unexpected extras: a lovely animation, a witty line, a hidden detail. These make people <em>talk</em> about you. Today's delighter is tomorrow's basic.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">6.3 · The toolbox</span>
+    <h2 class="rv" style="margin-top:1rem">Research methods you can do <em class="serif-i">this week</em></h2>
+    <div class="tbl-wrap rv">
+    <table class="tbl">
+      <thead><tr><th>Method</th><th>What you do</th><th>What you learn</th><th>Effort</th></tr></thead>
+      <tbody>
+        <tr><td><b>Stakeholder interview</b></td><td>A 45-minute chat with the client: goals, audience, competitors, what they hate.</td><td>The real problem behind "make a logo".</td><td>Low</td></tr>
+        <tr><td><b>User interviews</b></td><td>Talk to 5–8 real customers about their lives and habits, not your design.</td><td>Motivations, language, pain points.</td><td>Medium</td></tr>
+        <tr><td><b>Competitive audit</b></td><td>Collect 10–20 competitor logos, sites and packs on one board. Note colours, fonts and tone.</td><td>Clichés to avoid and gaps to own.</td><td>Low</td></tr>
+        <tr><td><b>Moodboard</b></td><td>Collect images, colours and type that capture the feeling. Make 2–3 different directions.</td><td>Visual agreement <em>before</em> you design.</td><td>Low</td></tr>
+        <tr><td><b>Five-second test</b></td><td>Show a design for 5 seconds, hide it, ask what they remember.</td><td>Whether your hierarchy works.</td><td>Low</td></tr>
+        <tr><td><b>Preference test</b></td><td>Show 2–3 options and ask which fits "trustworthy" (or another word), and why.</td><td>Which direction matches the brand words.</td><td>Low</td></tr>
+        <tr><td><b>Usability test</b></td><td>Watch people try to complete a task with your design. Don't help!</td><td>Where they get confused.</td><td>Medium</td></tr>
+        <tr><td><b>A/B test</b></td><td>Show two live versions to real traffic and measure clicks or sales.</td><td>Hard numbers on what performs.</td><td>High</td></tr>
+        <tr><td><b>Surveys</b></td><td>Short questionnaires to many people.</td><td>The "what" and "how many", rarely the "why".</td><td>Medium</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="study rv">
+      <span class="study__label">Research · You only need ~5 users</span>
+      <p>Nielsen &amp; Landauer's model suggests testing with about 5 users uncovers most usability problems (roughly 85% in their model). Several small rounds beat one big test.</p>
+      <cite>Nielsen, J. &amp; Landauer, T. K. (1993). A mathematical model of the finding of usability problems. Proceedings of ACM INTERCHI'93.</cite>
+    </div>
+  </div>
+</section>
+
+<section class="band-2">
+  <div class="wrap">
+    <span class="kicker">6.4 · Brand discovery</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:20ch">"This, not that": turn feelings into <em class="serif-i">decisions</em></h2>
+    <p class="lede rv">Branding agencies run workshops with sliders like these. The client places each one, and the answers become colour and type decisions. Try it: move the sliders and watch the direction change.</p>
+    <div class="demo rv">
+      <div class="demo__bar"><span class="dots"><i></i><i></i><i></i></span><span>Brand personality sliders</span></div>
+      <div class="demo__body">
+        <div class="slider-row"><span>Playful</span><input type="range" min="0" max="100" value="30" data-axis="serious"><span>Serious</span></div>
+        <div class="slider-row"><span>Classic</span><input type="range" min="0" max="100" value="65" data-axis="modern"><span>Modern</span></div>
+        <div class="slider-row"><span>Quiet</span><input type="range" min="0" max="100" value="70" data-axis="loud"><span>Loud</span></div>
+        <div class="slider-row"><span>Affordable</span><input type="range" min="0" max="100" value="35" data-axis="premium"><span>Premium</span></div>
+        <div class="slider-row"><span>Warm</span><input type="range" min="0" max="100" value="30" data-axis="cool"><span>Cool</span></div>
+        <div id="dirOut">
+          <div id="dirCard"><span class="mono" id="dirTag">DIRECTION</span><div class="t" id="dirTitle">Your brand</div><div id="dirPal"><i></i><i></i><i></i><i></i></div></div>
+          <div id="dirText"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">6.5 · The brief</span><h2 class="rv">Every project starts with a <em class="serif-i">brief</em></h2>
+      <p class="rv">A brief is a one-page agreement on what you're making and why. No brief means endless revisions. Copy this template and use it for every project, including personal ones.</p>
+    </div>
+    <div class="brief rv" id="briefText"><button class="chip" id="copyBrief">Copy</button>PROJECT BRIEF
+—————————————————————
+1. The client / brand
+   Who are they? One sentence.
+
+2. The problem
+   What isn't working right now? Why now?
+
+3. The goal
+   What does success look like? (more sign-ups, look premium, reach Gen Z...)
+
+4. The audience
+   Who exactly? Age, place, habits, what they already love.
+
+5. Personality — 3 to 5 words
+   e.g. warm · honest · quick-witted
+   NOT: corporate · cold · cheap
+
+6. Competitors & references
+   3 competitors + 3 brands (any industry) they admire.
+
+7. Deliverables
+   Logo, colour palette, type, social templates, packaging...
+
+8. Must-haves / must-avoids
+   Mandatory elements, colours to avoid, cultural notes.
+
+9. Timeline & budget
+   Key dates, number of revision rounds.
+
+10. How we'll decide
+   Who approves? What are we measuring against?
+   (→ the goal + the personality words, not "I like it")</div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <span class="kicker">6.6 · The design job market</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:18ch">Where the work <em class="serif-i" style="color:var(--yellow)">is</em> heading</h2>
+    <div class="grid g4" style="margin-top:2.5rem">
+      <div class="stat rv"><span class="stat__n">$61.3k</span><span class="stat__l">US median pay, graphic designers (May 2024, BLS)</span></div>
+      <div class="stat rv rv-d1"><span class="stat__n">$98.1k</span><span class="stat__l">US median pay, web &amp; digital interface designers (May 2024, BLS)</span></div>
+      <div class="stat rv rv-d2"><span class="stat__n">+2%</span><span class="stat__l">Projected growth for graphic design jobs, 2024–34. Slower than average.</span></div>
+      <div class="stat rv rv-d3"><span class="stat__n">+7%</span><span class="stat__l">Projected growth for web &amp; digital interface design, 2024–34. Faster than average.</span></div>
+    </div>
+    <p class="lede rv" style="margin-top:3rem">What this means for you: <strong>pure print-only graphic design is shrinking. Design that lives on screens, in systems and in motion is growing.</strong> Learn the fundamentals in this guide (they never expire), then aim them at digital work.</p>
+    <div class="grid g3" style="margin-top:2rem">
+      <div class="card rv"><h4>Brand identity</h4><p>Logos, colour and type systems, guidelines. Highest creative status, very competitive.</p></div>
+      <div class="card rv rv-d1"><h4>UI / product design</h4><p>Apps and websites. Best pay and growth. Needs graphic skills plus UX thinking.</p></div>
+      <div class="card rv rv-d2"><h4>Marketing &amp; social</h4><p>Ads, social posts, campaigns. Lots of jobs and fast-paced. A great first job.</p></div>
+      <div class="card rv"><h4>Motion design</h4><p>Animated logos, explainer videos, UI animation. Rising demand, fewer people do it well.</p></div>
+      <div class="card rv rv-d1"><h4>Packaging</h4><p>Physical products on shelves. Combines branding, print and 3D thinking.</p></div>
+      <div class="card rv rv-d2"><h4>Illustration</h4><p>Custom drawings for brands, editorial and products. The antidote to stock-photo sameness.</p></div>
+    </div>
+    <div class="study rv" style="background:#201C17;color:var(--paper)">
+      <span class="study__label" style="color:var(--yellow)">Reality check · AI and design jobs</span>
+      <p>Adobe's analysis of BLS wage-survey data shows counted graphic-design employment fell from about 214k (May 2024) to about 198k (May 2025), while the median wage rose. Routine production work (resizing, simple social posts) is being automated. Taste, strategy, research and systems thinking are what clients still pay humans for. That is exactly what this guide trains.</p>
+      <cite style="color:#A9A094">Sources: U.S. Bureau of Labor Statistics, Occupational Outlook Handbook &amp; OEWS (May 2024); Adobe, "The Economic State of Creative Professions" (2026).</cite>
+    </div>
+  </div>
+</section>
+
+<section class="band-yellow">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--ink)">Your missions</span>
+    <h2 class="rv" style="margin-top:1rem">Homework</h2>
+    <ol class="steps" style="margin-top:2rem">
+      <li class="rv"><div><h4>Pick a real local business</h4><p>A chai stall, gym, bakery or tutor. Fill in the brief template as if they hired you.</p></div></li>
+      <li class="rv"><div><h4>Competitive audit</h4><p>Collect 10 competitors on one Figma board. Write 5 observations about colour, type and tone.</p></div></li>
+      <li class="rv"><div><h4>Interview 3 customers</h4><p>Ask why they go there, what they'd change and which other brands they love. Write down their exact words.</p></div></li>
+      <li class="rv"><div><h4>Two moodboards</h4><p>Make two opposite directions. Run a preference test with 5 people using the personality words.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+<div id="next"></div>
+<footer id="foot"></footer>
+<script src="assets/app.js?v=2"></script>
+<script>
+(() => {
+  const ins = document.querySelectorAll('[data-axis]');
+  const card = document.getElementById('dirCard');
+  const title = document.getElementById('dirTitle');
+  const tag = document.getElementById('dirTag');
+  const pal = document.querySelectorAll('#dirPal i');
+  const text = document.getElementById('dirText');
+  const run = () => {
+    const v = {}; ins.forEach(i => v[i.dataset.axis] = +i.value / 100);
+    // hue: warm (~15) to cool (~215)
+    const hue = Math.round(15 + v.cool * 200);
+    const sat = Math.round(35 + v.loud * 55 - v.premium * 20);
+    const light = Math.round(52 - v.premium * 22 + (1 - v.serious) * 6);
+    const main = `hsl(${hue} ${sat}% ${light}%)`;
+    const accentHue = v.loud > .55 ? (hue + 180) % 360 : (hue + 30) % 360;
+    const accent = `hsl(${accentHue} ${Math.min(90, sat + 10)}% ${Math.min(62, light + 10)}%)`;
+    const bg = v.premium > .6 ? `hsl(${hue} 10% 10%)` : `hsl(${hue} 30% 95%)`;
+    const fg = v.premium > .6 ? '#F3EDE2' : '#16130F';
+    const neutral = `hsl(${hue} 8% ${v.premium > .6 ? 70 : 30}%)`;
+    [main, accent, bg, neutral].forEach((c, i) => pal[i].style.background = c);
+    card.style.background = bg; card.style.color = fg;
+    const serif = v.modern < .45 || (v.premium > .65 && v.serious > .5);
+    const mono = v.modern > .75 && v.serious > .55;
+    title.style.fontFamily = mono ? 'var(--mono)' : serif ? 'var(--display)' : 'var(--body)';
+    title.style.fontWeight = v.loud > .6 ? 800 : v.premium > .6 ? 400 : 600;
+    title.style.fontStyle = (serif && v.serious < .5) ? 'italic' : 'normal';
+    title.style.letterSpacing = v.premium > .6 ? '.06em' : '-.03em';
+    title.style.textTransform = v.premium > .7 ? 'uppercase' : 'none';
+    title.style.color = v.premium > .6 ? fg : main;
+    title.textContent = v.serious > .6 ? 'Aldermoor & Co.' : v.loud > .6 ? 'Zingo!' : 'Little Fern';
+    tag.textContent = `DIRECTION · ${v.premium > .6 ? 'PREMIUM' : 'EVERYDAY'} · ${v.cool > .5 ? 'COOL' : 'WARM'}`;
+    const words = [];
+    words.push(v.serious > .6 ? 'Restrained shapes, sharp edges, tight palette.' : v.serious < .4 ? 'Rounded shapes, friendly illustrations, a sense of humour.' : 'Balanced: friendly but credible.');
+    words.push(serif ? 'Type: a serif for headlines says heritage, craft and trust.' : mono ? 'Type: a monospace or technical grotesk says precise and engineered.' : 'Type: a clean sans says modern, open and approachable.');
+    words.push(v.loud > .6 ? 'Colour: saturated, contrasting accent. Built to stand out in a feed.' : 'Colour: muted and harmonious. Lets the content breathe.');
+    words.push(v.premium > .6 ? 'Space: generous margins, fewer elements, dark or neutral backgrounds.' : 'Space: denser layouts are fine. Energy over elegance.');
+    words.push(v.cool > .5 ? 'Temperature: cool hues read as calm, technical, trustworthy.' : 'Temperature: warm hues read as human, appetising, energetic.');
+    text.innerHTML = '<h4>What the sliders are telling you</h4><ul class="ticks">' + words.map(w => `<li>${w}</li>`).join('') + '</ul><p class="muted" style="font-size:.9rem">This is a teaching toy, not a formula. Real brands also weigh competitors, culture and the product itself.</p>';
+  };
+  ins.forEach(i => i.addEventListener('input', run)); run();
+  const cp = document.getElementById('copyBrief');
+  cp.addEventListener('click', () => {
+    const t = document.getElementById('briefText').innerText.replace(/^Copy\s*/, '');
+    navigator.clipboard.writeText(t).then(() => { cp.textContent = 'Copied ✓'; setTimeout(() => cp.textContent = 'Copy', 1600); });
+  });
+})();
+</script>
+</body>
+</html>

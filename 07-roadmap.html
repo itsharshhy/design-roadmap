@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · The roadmap — design/roadmap</title>
+<link rel="stylesheet" href="assets/style.css?v=2">
+<style>
+  .day { display:grid; grid-template-columns: repeat(3, 1fr); border:1.5px solid var(--ink); border-radius: 16px; overflow:hidden; }
+  .day > div { padding: 1.6rem; border-right: 1.5px solid var(--ink); }
+  .day > div:last-child { border-right: 0; }
+  .day .m { font-family: var(--display); font-size: 3.4rem; line-height: 1; letter-spacing: -.04em; }
+  @media (max-width:760px){ .day{grid-template-columns:1fr} .day>div{border-right:0;border-bottom:1.5px solid var(--ink)} }
+  .phase h3 { margin-bottom: .3rem; }
+  .phase .goal { color: var(--ink-2); margin-bottom: 1.2rem; }
+  .phase .out { margin-top: 1.4rem; padding: 1rem 1.2rem; background: var(--paper-2); border-radius: 12px; font-size: .95rem; }
+  .phase .out b { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--red); display:block; margin-bottom:.2rem; }
+</style>
+</head>
+<body data-page="07-roadmap.html">
+<header id="nav"></header>
+<main>
+
+<header class="chap">
+  <div class="wrap chap__grid">
+    <div>
+      <div class="chap__num">07</div>
+      <span class="kicker">Chapter seven</span>
+      <h1>Zero to portfolio in <em class="serif-i hl-red">twelve</em> months.</h1>
+      <p class="lede">An hour or two a day, six phases, about 40 milestones. Tick them as you go: your progress is saved in this browser, so you can close the tab and come back any time.</p>
+      <div class="overall" style="margin-top:2rem">
+        <svg class="overall__ring" viewBox="0 0 84 84"><circle cx="42" cy="42" r="36" stroke="#DDD3C0"/><circle id="ringFg" cx="42" cy="42" r="36" stroke="#1F5C4A" stroke-linecap="round" transform="rotate(-90 42 42)" style="transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1)"/><text id="pct" x="42" y="48" text-anchor="middle" font-family="Fraunces" font-size="18" fill="#16130F">0%</text></svg>
+        <div><b id="doneCount">0 milestones done</b><br><button class="chip" id="resetProgress" style="margin-top:.5rem">Reset progress</button></div>
+      </div>
+    </div>
+    <svg class="chap__art" viewBox="0 0 400 400" aria-hidden="true">
+      <g class="draw"><path d="M40 360 C 80 300, 60 260, 120 250 S 180 200, 160 160 S 230 120, 260 130 S 330 90, 340 40" fill="none" stroke="#16130F" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/></g>
+      <circle cx="40" cy="360" r="14" fill="#E2462B"/>
+      <circle cx="120" cy="250" r="12" fill="#F0B42E"/>
+      <circle cx="160" cy="160" r="12" fill="#2340D8"/>
+      <circle cx="260" cy="130" r="12" fill="#1F5C4A"/>
+      <!-- flag -->
+      <g class="float"><line x1="340" y1="40" x2="340" y2="2" stroke="#16130F" stroke-width="4"/><path d="M340 2 L385 14 L340 26Z" fill="#E2462B"/></g>
+      <circle cx="340" cy="40" r="16" fill="#16130F" class="pulse"/>
+      <text x="20" y="395" font-family="JetBrains Mono" font-size="12" fill="#16130F">you are here →</text>
+    </svg>
+  </div>
+</header>
+
+<section class="sec-tight">
+  <div class="wrap">
+    <span class="kicker">The daily rhythm</span>
+    <h2 class="rv" style="margin:1rem 0 2rem;font-size:var(--step-3)">Every day, about 70 minutes</h2>
+    <div class="day rv">
+      <div><div class="m hl-red">20<small style="font-size:1rem">min</small></div><h4>Look</h4><p style="margin:0">Add to your swipe file. Dissect one piece: what, how, why.</p></div>
+      <div style="background:var(--yellow)"><div class="m">40<small style="font-size:1rem">min</small></div><h4>Make</h4><p style="margin:0">Copy, remix or create. Always finish something, however small.</p></div>
+      <div><div class="m hl-blue">10<small style="font-size:1rem">min</small></div><h4>Share</h4><p style="margin:0">Post it, ask one question, give feedback to someone else.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:2rem">
+  <div class="wrap">
+
+    <div class="phase">
+      <div class="phase__side"><div class="phase__n">01</div><div class="phase__when">Weeks 1–4</div><div class="phase__bar"><i></i></div></div>
+      <div>
+        <h3>Open your eyes</h3>
+        <p class="goal">Goal: start <em>seeing</em> design everywhere and get comfortable in Figma. Read chapters 01–02.</p>
+        <label class="task"><input type="checkbox" data-id="p1-1"><span><b>Create a free Figma account</b><small>Do Figma's official "Figma for beginners" YouTube series (about 4 short videos).</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p1-2"><span><b>Start a swipe file with 100 saves</b><small>Are.na or Pinterest. Posters, packaging, apps, magazines.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p1-3"><span><b>Write 10 "what / how / why" dissections</b><small>Three sentences each. Keep them in a Notion page or notebook.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p1-4"><span><b>Supermarket &amp; street safari</b><small>Photograph 30 real-world designs. Group them by style.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p1-5"><span><b>Find one logo per Gestalt principle</b><small>Chapter 02 homework.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p1-6"><span><b>Join one design community</b><small>A Discord, r/graphic_design, or local meetups. Lurk, then post.</small></span></label>
+        <div class="out"><b>You'll have</b>A trained eye, a swipe file, and Figma basics: frames, shapes, text, colour.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase__side"><div class="phase__n">02</div><div class="phase__when">Months 2–3</div><div class="phase__bar"><i></i></div></div>
+      <div>
+        <h3>The foundations</h3>
+        <p class="goal">Goal: understand colour, type and layout deeply. Read chapters 03–05. Copy a lot.</p>
+        <label class="task"><input type="checkbox" data-id="p2-1"><span><b>Copy 10 designs pixel-perfect</b><small>Posters, landing pages, magazine spreads. (Private practice only.)</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p2-2"><span><b>Make 5 palettes from photos</b><small>Use Coolors or Adobe Color image extraction.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p2-3"><span><b>One poster, three moods</b><small>Exciting, trustworthy, luxurious. Recolour and retype only.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p2-4"><span><b>Beat KernType &amp; Shape Type</b><small>method.ac. Repeat until you score over 80.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p2-5"><span><b>Build your own type scale &amp; 8pt spacing sheet</b><small>Save it as a Figma style library.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p2-6"><span><b>Three-poster composition drill</b><small>Centred, thirds and asymmetric (chapter 05).</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p2-7"><span><b>Redesign one ugly flyer or menu</b><small>Your first before/after.</small></span></label>
+        <div class="out"><b>You'll have</b>Real control over colour, type and layout, plus your first before/after redesign.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase__side"><div class="phase__n">03</div><div class="phase__when">Months 4–5</div><div class="phase__bar"><i></i></div></div>
+      <div>
+        <h3>Tools &amp; craft</h3>
+        <p class="goal">Goal: get fast and clean in your tools. Tools don't make designers, but slow tools hold them back.</p>
+        <label class="task"><input type="checkbox" data-id="p3-1"><span><b>Figma deep-dive</b><small>Auto layout, components, variants, styles and variables.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p3-2"><span><b>Master the pen tool</b><small>Trace 20 logos and icons with vectors (Figma, Illustrator or Affinity). The Bézier Game (bezier.method.ac) helps.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p3-3"><span><b>Photo editing basics</b><small>Cut-outs, colour correction and mockups in Photoshop or free Photopea.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p3-4"><span><b>Design 30 icons in one consistent style</b><small>Same stroke, corner radius and grid. That's a system.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p3-5"><span><b>Do a 30-day challenge</b><small>Daily poster, Daily UI or 36 Days of Type. Post every day.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p3-6"><span><b>Learn keyboard shortcuts</b><small>Print a cheat sheet and stop using menus.</small></span></label>
+        <div class="out"><b>You'll have</b>Speed, clean vectors, a visible streak of public work, and a growing audience.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase__side"><div class="phase__n">04</div><div class="phase__when">Months 6–8</div><div class="phase__bar"><i></i></div></div>
+      <div>
+        <h3>Real projects</h3>
+        <p class="goal">Goal: three portfolio-grade projects, each with research, process and final work. Read chapter 06.</p>
+        <label class="task"><input type="checkbox" data-id="p4-1"><span><b>Project A: brand identity for a real local business</b><small>Brief, research, moodboards, logo, palette, type, 5 applications (sign, cup, social, card, bag).</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p4-2"><span><b>Project B: poster or campaign series</b><small>3–5 posters for an event, cause or festival. Shows range and systems thinking.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p4-3"><span><b>Project C: redesign an app or website you use</b><small>Research the problem, test with 5 users, show before/after.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p4-4"><span><b>Run real research for each project</b><small>At least one interview, a competitive audit and a preference test.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p4-5"><span><b>Get critique from 3 working designers</b><small>ADPList offers free mentorship sessions. Ask specific questions.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p4-6"><span><b>Do one free or cheap real job</b><small>For a friend, NGO or college club. Real clients teach things nothing else can.</small></span></label>
+        <div class="out"><b>You'll have</b>Three case studies that prove you can think, not just decorate.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase__side"><div class="phase__n">05</div><div class="phase__when">Months 9–10</div><div class="phase__bar"><i></i></div></div>
+      <div>
+        <h3>Pick your lane</h3>
+        <p class="goal">Goal: go deeper in one specialisation. Generalists get you started; a speciality gets you hired.</p>
+        <label class="task"><input type="checkbox" data-id="p5-1"><span><b>Choose a lane</b><small>Brand · UI/product · marketing &amp; social · motion · packaging · illustration.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p5-2"><span><b>One deep project in that lane</b><small>Brand: full guidelines. UI: a working prototype. Motion: a 15-second logo animation.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p5-3"><span><b>Learn basic motion</b><small>Figma Smart Animate, then After Effects or Rive. Motion makes every portfolio stand out.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p5-4"><span><b>Study 5 designers in your lane</b><small>Read their case studies. Copy how they <em>explain</em> their work.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p5-5"><span><b>Use AI as an assistant, not an author</b><small>Use it for research, mockups and variations. The ideas and final craft stay yours.</small></span></label>
+        <div class="out"><b>You'll have</b>A clear "I'm a ___ designer" sentence and work that backs it up.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase__side"><div class="phase__n">06</div><div class="phase__when">Months 11–12</div><div class="phase__bar"><i></i></div></div>
+      <div>
+        <h3>Go pro</h3>
+        <p class="goal">Goal: package the work, show it to the world and land your first paid work.</p>
+        <label class="task"><input type="checkbox" data-id="p6-1"><span><b>Write 3–4 case studies</b><small>Problem → research → process → solution → result. Show the messy middle.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p6-2"><span><b>Launch a portfolio site</b><small>Framer, Webflow, Cargo, or hand-code it like this one. Behance as backup.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p6-3"><span><b>Polish your LinkedIn, Behance &amp; Dribbble</b><small>Same name, same photo, same one-line pitch everywhere.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p6-4"><span><b>Apply to 30 roles or pitch 30 clients</b><small>Internships, junior roles, agencies, startups, local businesses. Personalise every message.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p6-5"><span><b>Set your freelance basics</b><small>Proposal template, contract, price list and invoice. Never start without a brief and 50% upfront.</small></span></label>
+        <label class="task"><input type="checkbox" data-id="p6-6"><span><b>Get your first paid project</b><small>Any size. You're officially a designer. 🎉</small></span></label>
+        <div class="out"><b>You'll have</b>A portfolio, a public presence, and your first income from design.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <span class="kicker">The library</span>
+    <h2 class="rv" style="margin-top:1rem">Eight books that made designers</h2>
+    <p class="lede rv">Read in this order. Number one is the most important design book for a beginner.</p>
+    <div class="grid g4" style="margin-top:2.5rem">
+      <div class="book rv" style="background:var(--yellow);color:var(--ink)"><small>01 · Layout basics</small><h4>The Non-Designer's Design Book</h4><small>Robin Williams</small></div>
+      <div class="book rv rv-d1" style="background:var(--red);color:var(--paper)"><small>02 · Typography</small><h4>Thinking with Type</h4><small>Ellen Lupton</small></div>
+      <div class="book rv rv-d2" style="background:var(--paper);color:var(--ink)"><small>03 · UI, practical</small><h4>Refactoring UI</h4><small>Wathan &amp; Schoger</small></div>
+      <div class="book rv rv-d3" style="background:var(--blue);color:var(--paper)"><small>04 · Psychology</small><h4>The Design of Everyday Things</h4><small>Don Norman</small></div>
+      <div class="book rv" style="background:var(--green);color:var(--paper)"><small>05 · Colour</small><h4>Interaction of Color</h4><small>Josef Albers</small></div>
+      <div class="book rv rv-d1" style="background:#F3EDE2;color:var(--ink);outline:6px solid var(--red);outline-offset:-14px"><small>06 · Grids</small><h4>Grid Systems in Graphic Design</h4><small>Josef Müller-Brockmann</small></div>
+      <div class="book rv rv-d2" style="background:var(--pink);color:var(--ink)"><small>07 · Branding</small><h4>Logo Design Love</h4><small>David Airey</small></div>
+      <div class="book rv rv-d3" style="background:#3D372F;color:var(--paper)"><small>08 · Mindset</small><h4>Steal Like an Artist</h4><small>Austin Kleon</small></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">The toolkit</span>
+    <h2 class="rv" style="margin-top:1rem">Tools, mostly free</h2>
+    <div class="tbl-wrap rv">
+    <table class="tbl">
+      <thead><tr><th>Job</th><th>Start with (free)</th><th>Industry standard</th></tr></thead>
+      <tbody>
+        <tr><td><b>Layout, UI, everything</b></td><td>Figma (free plan)</td><td>Figma</td></tr>
+        <tr><td><b>Vector &amp; logos</b></td><td>Figma, Inkscape, Affinity (now free from Canva)</td><td>Adobe Illustrator</td></tr>
+        <tr><td><b>Photo editing</b></td><td>Photopea (runs in the browser)</td><td>Adobe Photoshop</td></tr>
+        <tr><td><b>Print &amp; editorial</b></td><td>Affinity, Scribus</td><td>Adobe InDesign</td></tr>
+        <tr><td><b>Motion</b></td><td>Figma Smart Animate, Rive (free tier), Jitter</td><td>After Effects</td></tr>
+        <tr><td><b>Colour</b></td><td>Coolors, Adobe Color, Realtime Colors, the WebAIM contrast checker</td><td>Same, plus Pantone guides for print</td></tr>
+        <tr><td><b>Type</b></td><td>Google Fonts, Fontshare, Fonts In Use</td><td>Adobe Fonts, independent foundries</td></tr>
+        <tr><td><b>Inspiration</b></td><td>Are.na, Savee, Cosmos, Behance, Mobbin</td><td>Same, plus books and the real world</td></tr>
+        <tr><td><b>Learning (video)</b></td><td>Figma's YouTube, The Futur, Flux Academy, Satori Graphics, CalArts on Coursera (audit free)</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="band-2">
+  <div class="wrap">
+    <span class="kicker">Glossary</span>
+    <h2 class="rv" style="margin:1rem 0 2rem">Speak designer</h2>
+    <dl class="gloss rv">
+      <div><dt>Hierarchy</dt><dd>The order in which the eye notices things. Biggest and boldest first.</dd></div>
+      <div><dt>Whitespace</dt><dd>Empty space around and between things. Not necessarily white.</dd></div>
+      <div><dt>Grid</dt><dd>Invisible columns and rows that things align to.</dd></div>
+      <div><dt>Kerning</dt><dd>Space between two specific letters.</dd></div>
+      <div><dt>Tracking</dt><dd>Even spacing across a whole word or line.</dd></div>
+      <div><dt>Leading</dt><dd>Space between lines of text (line-height).</dd></div>
+      <div><dt>Hue / Saturation / Value</dt><dd>Which colour, how intense, how light or dark.</dd></div>
+      <div><dt>Contrast ratio</dt><dd>How different text and background are in lightness. 4.5:1 minimum for body text.</dd></div>
+      <div><dt>Vector</dt><dd>Graphics made of maths (paths), so they scale to any size. Logos are always vectors.</dd></div>
+      <div><dt>Raster</dt><dd>Graphics made of pixels (photos). They go blurry when enlarged.</dd></div>
+      <div><dt>Moodboard</dt><dd>A collage that captures the feeling of a project before designing.</dd></div>
+      <div><dt>Brief</dt><dd>A one-page agreement on the problem, goal, audience and deliverables.</dd></div>
+      <div><dt>Brand guidelines</dt><dd>The rulebook for how a brand looks: logo use, colours, type, tone.</dd></div>
+      <div><dt>Bleed</dt><dd>Extra image beyond the trim edge in print, so nothing white peeks out after cutting.</dd></div>
+      <div><dt>Mockup</dt><dd>Your design placed on a realistic object (phone, bag, billboard).</dd></div>
+      <div><dt>Wireframe</dt><dd>A rough black-and-white layout sketch, all structure and no style.</dd></div>
+      <div><dt>Design system</dt><dd>Reusable components and rules so a big product stays consistent.</dd></div>
+      <div><dt>Case study</dt><dd>A portfolio story: problem → process → solution → result.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band-red">
+  <div class="wrap" style="text-align:center">
+    <p class="pull rv" style="margin-inline:auto;max-width:20ch">You don't need talent to start. You need to start to get the talent.</p>
+    <p class="rv" style="margin:2rem auto 0;font-family:var(--mono);font-size:.85rem;opacity:.85">— the whole idea of this guide</p>
+    <a class="btn rv" href="index.html" style="margin-top:2.5rem;background:var(--paper);color:var(--ink);border-color:var(--paper)">Back to the start <span class="arr">↺</span></a>
+  </div>
+</section>
+
+</main>
+<div id="next"></div>
+<footer id="foot"></footer>
+<script src="assets/app.js?v=2"></script>
+</body>
+</html>

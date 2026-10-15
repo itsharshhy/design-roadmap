@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · Colour — design/roadmap</title>
+<link rel="stylesheet" href="assets/style.css?v=2">
+<style>
+  .hsv { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
+  .hsv .bar { height: 54px; border-radius: 10px; border:1.5px solid var(--ink); }
+  @media (max-width:700px){ .hsv{grid-template-columns:1fr} }
+  #brandMock { --m:#E2462B; --mb:#FFF1EC; --mi:#F3EDE2; background: var(--mb); border-radius: 16px; padding: 1.5rem; border:1.5px solid var(--ink); transition: background .6s var(--ease); }
+  #brandMock .mk-nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:2.5rem; font-weight:700; }
+  #brandMock .mk-logo { display:flex; gap:.5rem; align-items:center; font-family: var(--display); font-size:1.3rem; }
+  #brandMock .mk-logo i { width:22px; height:22px; border-radius:50%; background:var(--m); transition: background .6s var(--ease); }
+  #brandMock h3 { font-size: clamp(1.8rem, 4vw, 2.8rem); max-width: 14ch; }
+  #brandMock .mk-btn { display:inline-block; background:var(--m); color:var(--mi); padding:.8rem 1.4rem; border-radius:999px; font-weight:600; transition: background .6s var(--ease), color .6s; }
+  #brandMock .mk-blob { width:120px; height:120px; border-radius: 40% 60% 55% 45%; background: var(--m); float:right; margin: -1rem 0 0 1rem; transition: background .6s var(--ease); animation: spin 18s linear infinite; }
+  .r631 { display:flex; height: 220px; border-radius: 16px; overflow: hidden; border:1.5px solid var(--ink); }
+  .r631 div { display:flex; align-items:flex-end; padding:1rem; font-family:var(--mono); font-size:.8rem; transition: flex .8s var(--ease); }
+  .r631:hover div:nth-child(1){ flex: 5 !important; }
+</style>
+</head>
+<body data-page="03-color.html">
+<header id="nav"></header>
+<main>
+
+<header class="chap">
+  <div class="wrap chap__grid">
+    <div>
+      <div class="chap__num">03</div>
+      <span class="kicker">Chapter three</span>
+      <h1>Colour is a <em class="serif-i hl-red">feeling</em> you can measure.</h1>
+      <p class="lede">Colour is usually the first thing people notice and the first thing beginners get wrong. This chapter covers the science, the psychology (and the myths about it), how brands pick colours, and how to build a palette that works.</p>
+    </div>
+    <svg class="chap__art" viewBox="0 0 400 400" aria-hidden="true">
+      <g class="spin">
+        <path d="M200 200 L200 40 A160 160 0 0 1 338.6 120Z" fill="#E2462B"/>
+        <path d="M200 200 L338.6 120 A160 160 0 0 1 338.6 280Z" fill="#F0B42E"/>
+        <path d="M200 200 L338.6 280 A160 160 0 0 1 200 360Z" fill="#1F5C4A"/>
+        <path d="M200 200 L200 360 A160 160 0 0 1 61.4 280Z" fill="#2340D8"/>
+        <path d="M200 200 L61.4 280 A160 160 0 0 1 61.4 120Z" fill="#16130F"/>
+        <path d="M200 200 L61.4 120 A160 160 0 0 1 200 40Z" fill="#F2B8A6"/>
+      </g>
+      <circle cx="200" cy="200" r="70" fill="#F3EDE2" stroke="#16130F" stroke-width="3"/>
+      <!-- paintbrush -->
+      <g transform="translate(200 200) rotate(-35)"><g class="float d1">
+        <rect x="-6" y="-60" width="12" height="80" rx="4" fill="#16130F"/>
+        <rect x="-8" y="16" width="16" height="14" fill="#A9A094"/>
+        <path d="M-8 30 Q0 70 8 30Z" fill="#E2462B"/>
+      </g></g>
+    </svg>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">3.1 · The basics</span><h2 class="rv">Every colour has <em class="serif-i">three</em> dials</h2></div>
+    <div>
+      <p class="lede rv">Forget the 16 million colours. Designers think in three dials. Once you know them you can describe and fix any colour.</p>
+      <div class="hsv rv" style="margin:2rem 0">
+        <div><div class="bar" style="background:linear-gradient(90deg,hsl(0 80% 55%),hsl(60 80% 55%),hsl(120 60% 45%),hsl(180 60% 45%),hsl(220 70% 55%),hsl(300 50% 55%),hsl(360 80% 55%))"></div><h4 style="margin-top:.8rem">Hue</h4><p>Which colour it is: red, blue, green. The position on the wheel.</p></div>
+        <div><div class="bar" style="background:linear-gradient(90deg,hsl(10 0% 55%),hsl(10 80% 55%))"></div><h4 style="margin-top:.8rem">Saturation</h4><p>How intense it is, from grey (0%) to vivid (100%). Low saturation feels calm and premium; high feels loud and young.</p></div>
+        <div><div class="bar" style="background:linear-gradient(90deg,hsl(10 75% 8%),hsl(10 75% 50%),hsl(10 75% 95%))"></div><h4 style="margin-top:.8rem">Lightness (value)</h4><p>How dark or light. <strong>The most important dial</strong>: contrast and readability live here.</p></div>
+      </div>
+      <div class="eli rv">
+        <span class="eli__label">Explain like I'm 10</span>
+        <p>Hue is which crayon you pick. Saturation is how hard you press. Lightness is whether you add black or white paint to it.</p>
+      </div>
+      <h3 class="rv" style="margin-top:2.5rem">Screen vs paper</h3>
+      <div class="grid g3 rv">
+        <div class="card card--flat"><h4>RGB</h4><p>Red, Green, Blue <em>light</em>. Used for screens. Mixing all of them gives white.</p></div>
+        <div class="card card--flat"><h4>CMYK</h4><p>Cyan, Magenta, Yellow, Black <em>ink</em>. Used for print. Bright screen colours often print duller.</p></div>
+        <div class="card card--flat"><h4>HEX / Pantone</h4><p>#E2462B is just RGB written as code. Pantone is a numbered ink system so a brand's red is the same everywhere.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-2">
+  <div class="wrap">
+    <span class="kicker">3.2 · Colour harmony</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:16ch">Recipes that <em class="serif-i">always</em> work</h2>
+    <p class="lede rv">Colour harmonies are geometric patterns on the wheel. They're starting points, not laws. Play with the tool: drag the hue and switch recipes.</p>
+    <div class="demo rv">
+      <div class="demo__bar"><span class="dots"><i></i><i></i><i></i></span><span>Harmony machine</span></div>
+      <div class="demo__body">
+        <div class="controls">
+          <button class="chip on" data-harmony="complementary">Complementary</button>
+          <button class="chip" data-harmony="analogous">Analogous</button>
+          <button class="chip" data-harmony="triadic">Triadic</button>
+          <button class="chip" data-harmony="split">Split-comp</button>
+          <button class="chip" data-harmony="monochrome">Monochrome</button>
+          <label>Base hue <input type="range" id="hue" min="0" max="359" value="12"></label>
+        </div>
+        <div class="wheel-wrap">
+          <div class="wheel" id="wheel"></div>
+          <div>
+            <p id="harmonyNote" style="font-size:1.1rem"></p>
+            <div class="swatches" id="harmonySwatches"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">3.3 · Colour psychology</span><h2 class="rv">Why brands pick the colours they do</h2></div>
+    <div>
+      <p class="lede rv">Colours carry associations, some biological (red = blood, alarm) and most learned from culture and from brands themselves. Here's what the research actually says.</p>
+      <div class="demo rv">
+        <div class="demo__bar"><span class="dots"><i></i><i></i><i></i></span><span>Same brand, different colour</span></div>
+        <div class="demo__body">
+          <div class="controls">
+            <button class="chip" data-mood="red">Red</button><button class="chip" data-mood="blue">Blue</button><button class="chip" data-mood="green">Green</button><button class="chip" data-mood="yellow">Yellow</button><button class="chip" data-mood="black">Black</button><button class="chip" data-mood="pink">Pink</button>
+          </div>
+          <div id="brandMock">
+            <div class="mk-nav"><span class="mk-logo"><i></i>Nimbu</span><span class="mono" style="font-weight:400">Shop · About · Cart</span></div>
+            <div class="mk-blob"></div>
+            <h3>Fresh lemonade, delivered cold.</h3>
+            <p>Same words, same layout. Only one colour changes. Notice how the whole personality shifts.</p>
+            <span class="mk-btn">Order now →</span>
+          </div>
+          <p id="brandWords" style="margin:1.25rem 0 0"></p>
+        </div>
+      </div>
+      <div class="study rv">
+        <span class="study__label">Research · Exciting red, competent blue</span>
+        <p>In four studies, Labrecque &amp; Milne found hue, saturation and lightness each shift perceived brand personality. Red raised perceived <strong>excitement</strong>, blue raised <strong>competence</strong>, and colour changed purchase intent. They also note that blue is the most common logo colour.</p>
+        <cite>Labrecque, L. I. &amp; Milne, G. R. (2012). Exciting red and competent blue. Journal of the Academy of Marketing Science, 40(5), 711–727.</cite>
+      </div>
+      <div class="study rv">
+        <span class="study__label">Research · Fit beats favourite</span>
+        <p>Bottomley &amp; Doyle found people judge logo colours by how <em>appropriate</em> they are for the product. Functional products (tools, banks) suit functional colours like blue and grey. Sensory and social products (food, fashion) suit warm, expressive ones. There's no single "best" colour, only the best fit.</p>
+        <cite>Bottomley, P. A. &amp; Doyle, J. R. (2006). The interactive effects of colors and products on perceptions of brand logo appropriateness. Marketing Theory, 6(1).</cite>
+      </div>
+      <div class="study study--warn rv">
+        <span class="study__label">Myth check · "90% of judgements are colour"</span>
+        <p>You'll see "62–90% of snap judgements are based on colour alone" everywhere. It comes from Singh (2006), a <em>literature review</em>, not a new experiment. Treat it as "colour matters a lot in first impressions", not a precise number. Psychologists Elliot &amp; Maier also stress that colour effects depend heavily on <strong>context</strong>: red means "danger" on a sign and "love" on a card.</p>
+        <cite>Singh, S. (2006). Impact of color on marketing. Management Decision, 44(6). · Elliot, A. J. &amp; Maier, M. A. (2014). Color psychology. Annual Review of Psychology, 65.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <span class="kicker">3.4 · Cheat sheet</span>
+    <h2 class="rv" style="margin-top:1rem">Common associations (Western-centric, with notes)</h2>
+    <div class="tbl-wrap rv">
+    <table class="tbl" style="color:var(--paper)">
+      <thead><tr><th>Colour</th><th>Common associations</th><th>Typical industries</th><th>Culture notes</th></tr></thead>
+      <tbody>
+        <tr><td><span class="dot" style="background:#E2462B"></span>Red</td><td>Energy, urgency, passion, appetite, danger</td><td>Food, entertainment, sales, sport</td><td>Luck and celebration in China; bridal red in India</td></tr>
+        <tr><td><span class="dot" style="background:#F08A2B"></span>Orange</td><td>Friendly, affordable, playful, warm</td><td>Telecom, kids, budget brands</td><td>Saffron is sacred in Hinduism and Buddhism</td></tr>
+        <tr><td><span class="dot" style="background:#F0B42E"></span>Yellow</td><td>Optimism, attention, caution, cheap-and-cheerful</td><td>Fast food, signage, kids</td><td>Royal/imperial in historic China</td></tr>
+        <tr><td><span class="dot" style="background:#1F5C4A"></span>Green</td><td>Nature, health, growth, money, "go"</td><td>Organic, finance, wellness</td><td>Strongly linked with Islam in many countries</td></tr>
+        <tr><td><span class="dot" style="background:#2340D8"></span>Blue</td><td>Trust, competence, calm, technology</td><td>Banks, tech, healthcare, airlines</td><td>One of the most universally liked colours</td></tr>
+        <tr><td><span class="dot" style="background:#E77A9A"></span>Pink</td><td>Playful, sweet, youthful, romantic</td><td>Beauty, fashion, confectionery</td><td>Gender coding is recent and fading</td></tr>
+        <tr><td><span class="dot" style="background:#6B4A2B"></span>Brown</td><td>Earthy, honest, rustic, warm</td><td>Coffee, chocolate, outdoor</td><td>Reads as "natural" almost everywhere</td></tr>
+        <tr><td><span class="dot" style="background:#16130F;border-color:#555"></span>Black</td><td>Luxury, power, elegance, seriousness</td><td>Fashion, luxury, sportswear</td><td>Mourning in much of the West</td></tr>
+        <tr><td><span class="dot" style="background:#F3EDE2"></span>White</td><td>Clean, simple, pure, space</td><td>Tech, healthcare, minimal brands</td><td>Mourning in parts of East and South Asia</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="eli rv" style="color:var(--ink)">
+      <span class="eli__label">Explain like I'm 10</span>
+      <p>Colours are like music for your eyes. Red is drums, fast and exciting. Blue is a slow song, calm and safe. Brands pick the song that matches the mood they want you to feel.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">3.5 · How brands decide</span><h2 class="rv">The colour <em class="serif-i">decision</em> process</h2></div>
+    <div>
+      <p class="lede rv">Professionals don't pick a colour because it's their favourite. They follow a process, roughly this one:</p>
+      <ol class="steps">
+        <li class="rv"><div><h4>Write 3–5 personality words</h4><p>"Playful, honest, fast" leads to very different colours than "calm, expert, premium".</p></div></li>
+        <li class="rv"><div><h4>Map the competitors</h4><p>Lay out the logos of 10 competitors. If they're all blue (like banks), you have a choice: fit in to signal trust, or break out to be remembered. Pepsi went blue to stand apart from Coke's red. T-Mobile owns magenta in a sea of red and blue.</p></div></li>
+        <li class="rv"><div><h4>Check the culture</h4><p>Where is the audience? White, red and green mean different things in different markets.</p></div></li>
+        <li class="rv"><div><h4>Pick one hero colour</h4><p>A single ownable colour is worth more than five. Think Tiffany blue, Cadbury purple, UPS brown. (Some are even trademarked.)</p></div></li>
+        <li class="rv"><div><h4>Build the system around it</h4><p>Neutrals for text and backgrounds, one accent, plus "semantic" colours: green for success, red for errors, yellow for warnings.</p></div></li>
+        <li class="rv"><div><h4>Test it</h4><p>Check contrast, colour-blind views and print, and see it on a phone in sunlight. Then show real people.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="band-2">
+  <div class="wrap split--even split">
+    <div class="rv">
+      <span class="kicker">3.6 · The 60-30-10 rule</span>
+      <h2 style="margin-top:1rem">Don't use your colours <em class="serif-i">equally</em></h2>
+      <p class="lede">Borrowed from interior design: about 60% dominant (usually a neutral), 30% secondary and 10% accent. The accent is your "red jumper", reserved for the things you want clicked or noticed.</p>
+      <p class="muted">Hover the bar: when the accent gets bigger, it stops being special.</p>
+    </div>
+    <div class="r631 rv">
+      <div style="flex:6;background:var(--paper-2)">60% · base</div>
+      <div style="flex:3;background:var(--green);color:var(--paper)">30% · secondary</div>
+      <div style="flex:1;background:var(--red);color:var(--paper)">10%</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky"><span class="kicker">3.7 · Contrast &amp; access</span><h2 class="rv">If they can't read it, it isn't <em class="serif-i">design</em></h2></div>
+    <div>
+      <p class="lede rv">Around <strong>1 in 12 men</strong> and <strong>1 in 200 women</strong> have some form of colour-vision deficiency. Plenty more people are reading on a cracked phone in sunlight. That's why the Web Content Accessibility Guidelines (WCAG) set minimum contrast ratios.</p>
+      <div class="demo rv">
+        <div class="demo__bar"><span class="dots"><i></i><i></i><i></i></span><span>Contrast checker</span></div>
+        <div class="demo__body">
+          <div class="controls">
+            <label>Text <input type="color" id="fg" value="#F0B42E"></label>
+            <label>Background <input type="color" id="bg" value="#F3EDE2"></label>
+            <button class="chip" data-pair="#16130F,#F3EDE2">Ink on paper</button>
+            <button class="chip" data-pair="#F0B42E,#F3EDE2">Yellow on cream</button>
+            <button class="chip" data-pair="#F3EDE2,#2340D8">Cream on cobalt</button>
+            <button class="chip" data-pair="#7A7166,#E9E1D2">Grey on beige</button>
+          </div>
+          <div class="contrast-preview" id="contrastPreview">
+            <div class="big">Can you read me?</div>
+            <p style="margin:0">Body text needs to be comfortable for long reading, for everybody.</p>
+          </div>
+          <div style="display:flex;align-items:end;gap:1.5rem;flex-wrap:wrap;margin-top:1.25rem">
+            <div class="ratio" id="ratio"></div>
+            <div class="badges" id="badges"></div>
+          </div>
+        </div>
+      </div>
+      <div class="dd rv">
+        <div class="do"><b>Do</b>Never rely on colour alone. Add icons, labels or underlines (an error = red + ⚠ + text).</div>
+        <div class="dont"><b>Don't</b>Use light grey text on white because it "looks clean". It's the most common contrast failure on the web.</div>
+      </div>
+      <p class="rv">Pro tip: avoid pure <code>#000</code> on pure <code>#FFF</code> for long reading. A warm off-black on an off-white (like this page) is easier on the eyes and feels more crafted.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band-yellow">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--ink)">Your missions</span>
+    <h2 class="rv" style="margin-top:1rem">Homework</h2>
+    <ol class="steps" style="margin-top:2rem">
+      <li class="rv"><div><h4>Steal from life</h4><p>Take 5 photos of things you love (a market, a sunset, a café). Use Coolors or Adobe Color "extract from image" to pull a palette from each.</p></div></li>
+      <li class="rv"><div><h4>Competitor colour map</h4><p>Pick an industry (food delivery, banks, sneakers). Put 10 logos on one page. What's the dominant colour? Where's the gap?</p></div></li>
+      <li class="rv"><div><h4>One poster, three moods</h4><p>Design one simple poster, then recolour it three ways: exciting, trustworthy, luxurious. Ask friends to match the mood words.</p></div></li>
+      <li class="rv"><div><h4>Grey first</h4><p>Design your next layout in greys only. Add colour last. If it works in grey, it works.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+<div id="next"></div>
+<footer id="foot"></footer>
+<script src="assets/app.js?v=2"></script>
+</body>
+</html>

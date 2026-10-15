@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 · Design psychology — design/roadmap</title>
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body data-page="02-psychology.html">
+<header id="nav"></header>
+<main>
+
+<header class="chap">
+  <div class="wrap chap__grid">
+    <div>
+      <div class="chap__num">02</div>
+      <span class="kicker">Chapter two</span>
+      <h1>The brain is <em class="serif-i hl-blue">lazy</em>. Design for that.</h1>
+      <p class="lede">Your viewer's brain wants to spend as little energy as possible. Psychologists have spent a century mapping the shortcuts it takes. Learn them and you'll know why designs work, not just that they do.</p>
+    </div>
+    <svg class="chap__art" viewBox="0 0 400 400" aria-hidden="true">
+      <circle cx="200" cy="200" r="160" fill="#F2B8A6"/>
+      <!-- brain made of shapes -->
+      <g class="float">
+        <path d="M120 210 C 100 140, 170 100, 210 120 C 250 90, 320 130, 300 190 C 330 230, 290 290, 240 270 C 210 300, 140 290, 140 250 C 110 250, 105 225, 120 210Z" fill="#F3EDE2" stroke="#16130F" stroke-width="5"/>
+        <path d="M170 150 q20 20 0 40 q-20 20 0 40" fill="none" stroke="#16130F" stroke-width="4" stroke-linecap="round"/>
+        <path d="M240 140 q-20 25 5 45 q25 20 0 50" fill="none" stroke="#16130F" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="205" cy="200" r="14" fill="#2340D8" class="pulse"/>
+      </g>
+      <g class="spin-r"><circle cx="200" cy="200" r="185" fill="none" stroke="#16130F" stroke-width="1.5" stroke-dasharray="14 8"/></g>
+      <text x="40" y="390" font-family="JetBrains Mono" font-size="12" fill="#16130F">fig. 3 — energy saving mode</text>
+    </svg>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky">
+      <span class="kicker">2.1 · Pre-attention</span>
+      <h2 class="rv">What the eye sees <em class="serif-i">before</em> you think</h2>
+    </div>
+    <div>
+      <p class="lede rv">Some visual differences get processed in under a quarter of a second, before conscious thought. Scientists call these <strong>pre-attentive attributes</strong>. They are your main tools for grabbing attention.</p>
+      <div class="demo rv">
+        <div class="demo__bar"><span class="dots"><i></i><i></i><i></i></span><span>Find the odd one out</span></div>
+        <div class="demo__body">
+          <div class="grid g3">
+            <div><svg viewBox="0 0 120 120"><g fill="#16130F">
+              <circle cx="20" cy="20" r="8"/><circle cx="60" cy="20" r="8"/><circle cx="100" cy="20" r="8"/>
+              <circle cx="20" cy="60" r="8"/><circle cx="60" cy="60" r="8" fill="#E2462B"/><circle cx="100" cy="60" r="8"/>
+              <circle cx="20" cy="100" r="8"/><circle cx="60" cy="100" r="8"/><circle cx="100" cy="100" r="8"/></g></svg><p class="mono" style="margin-top:.6rem">Colour</p></div>
+            <div><svg viewBox="0 0 120 120"><g fill="#16130F">
+              <circle cx="20" cy="20" r="8"/><circle cx="60" cy="20" r="8"/><circle cx="100" cy="20" r="8"/>
+              <circle cx="20" cy="60" r="8"/><circle cx="60" cy="60" r="8"/><circle cx="100" cy="60" r="8"/>
+              <circle cx="20" cy="100" r="8"/><circle cx="60" cy="100" r="8"/><circle cx="100" cy="100" r="17"/></g></svg><p class="mono" style="margin-top:.6rem">Size</p></div>
+            <div><svg viewBox="0 0 120 120"><g stroke="#16130F" stroke-width="5" stroke-linecap="round">
+              <line x1="20" y1="10" x2="20" y2="30"/><line x1="60" y1="10" x2="60" y2="30"/><line x1="100" y1="10" x2="100" y2="30"/>
+              <line x1="20" y1="50" x2="20" y2="70"/><line x1="60" y1="50" x2="60" y2="70"/><line x1="92" y1="52" x2="108" y2="68"/>
+              <line x1="20" y1="90" x2="20" y2="110"/><line x1="60" y1="90" x2="60" y2="110"/><line x1="100" y1="90" x2="100" y2="110"/></g></svg><p class="mono" style="margin-top:.6rem">Orientation</p></div>
+          </div>
+          <p style="margin:1.25rem 0 0">You found each one instantly, without "searching". That's pre-attention. Other attributes that work the same way are shape, motion, enclosure and position.</p>
+        </div>
+      </div>
+      <div class="study rv">
+        <span class="study__label">Research · Feature Integration Theory</span>
+        <p>Anne Treisman showed that simple features like colour and orientation pop out in parallel, all at once. Combinations of features ("the red <em>and</em> tilted one") need slow, one-by-one searching. <strong>Lesson: make the important thing different in one obvious way.</strong></p>
+        <cite>Treisman, A. &amp; Gelade, G. (1980). A feature-integration theory of attention. Cognitive Psychology, 12(1).</cite>
+      </div>
+      <div class="eli rv">
+        <span class="eli__label">Explain like I'm 10</span>
+        <p>In a class photo where everyone wears white, you spot the kid in the red jumper straight away. If you want people to see something, give it the red jumper, and give it to only one thing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-2">
+  <div class="wrap">
+    <span class="kicker">2.2 · Gestalt</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:18ch">The brain <em class="serif-i">groups</em> things automatically</h2>
+    <p class="lede rv">In the 1920s, German psychologists (Wertheimer, Köhler, Koffka) found that we see wholes, not parts. "Gestalt" roughly means "shape" or "whole". These rules are why your layouts feel organised or messy.</p>
+    <div class="grid g4" style="margin-top:2.5rem">
+      <div class="rv"><div class="gest"><svg viewBox="0 0 120 80"><g fill="#16130F"><circle cx="10" cy="20" r="6"/><circle cx="26" cy="20" r="6"/><circle cx="10" cy="40" r="6"/><circle cx="26" cy="40" r="6"/><circle cx="10" cy="60" r="6"/><circle cx="26" cy="60" r="6"/><circle cx="76" cy="20" r="6"/><circle cx="92" cy="20" r="6"/><circle cx="108" cy="20" r="6"/><circle cx="76" cy="40" r="6"/><circle cx="92" cy="40" r="6"/><circle cx="108" cy="40" r="6"/><circle cx="76" cy="60" r="6"/><circle cx="92" cy="60" r="6"/><circle cx="108" cy="60" r="6"/></g></svg></div><div class="gest-cap"><h4>Proximity</h4><p>Things close together belong together. You see two groups, not 15 dots. Spacing is your strongest grouping tool.</p></div></div>
+      <div class="rv rv-d1"><div class="gest"><svg viewBox="0 0 120 80"><g><circle cx="15" cy="20" r="7" fill="#16130F"/><rect x="38" y="13" width="14" height="14" fill="#E2462B"/><circle cx="75" cy="20" r="7" fill="#16130F"/><rect x="98" y="13" width="14" height="14" fill="#E2462B"/><circle cx="15" cy="60" r="7" fill="#16130F"/><rect x="38" y="53" width="14" height="14" fill="#E2462B"/><circle cx="75" cy="60" r="7" fill="#16130F"/><rect x="98" y="53" width="14" height="14" fill="#E2462B"/></g></svg></div><div class="gest-cap"><h4>Similarity</h4><p>Things that look alike seem related. That's why all links should share one style and all buttons another.</p></div></div>
+      <div class="rv rv-d2"><div class="gest"><svg viewBox="0 0 120 120"><g fill="#16130F"><path d="M60 10 a50 50 0 0 1 50 50 h-20 a30 30 0 0 0 -30 -30z"/><path d="M110 60 a50 50 0 0 1 -50 50 v-20 a30 30 0 0 0 30 -30z"/><path d="M60 110 a50 50 0 0 1 -50 -50 h20 a30 30 0 0 0 30 30z"/></g><path d="M10 60 a50 50 0 0 1 50 -50" fill="none" stroke="#16130F" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/></svg></div><div class="gest-cap"><h4>Closure</h4><p>Your brain fills gaps to complete shapes. Logos like WWF's panda and IBM's stripes rely on this.</p></div></div>
+      <div class="rv rv-d3"><div class="gest"><svg viewBox="0 0 120 80"><path d="M5 70 C 40 70, 40 10, 60 10 S 80 70, 115 70" fill="none" stroke="#16130F" stroke-width="5"/><path d="M5 10 C 40 10, 40 70, 60 70 S 80 10, 115 10" fill="none" stroke="#E2462B" stroke-width="5"/></svg></div><div class="gest-cap"><h4>Continuity</h4><p>The eye follows lines and curves. You see two smooth waves, not four bent pieces. Use it to lead eyes across a page.</p></div></div>
+      <div class="rv"><div class="gest"><svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#16130F" rx="6"/><path d="M60 10 C 30 10 30 35 45 45 C 30 55 35 75 50 80 C 40 90 40 110 60 110 C 80 110 80 90 70 80 C 85 75 90 55 75 45 C 90 35 90 10 60 10Z" fill="#F3EDE2"/></svg></div><div class="gest-cap"><h4>Figure / ground</h4><p>We split everything into object and background. Clever logos (FedEx's hidden arrow) play with both.</p></div></div>
+      <div class="rv rv-d1"><div class="gest"><svg viewBox="0 0 120 80"><rect x="4" y="8" width="54" height="64" rx="8" fill="#F0B42E"/><g fill="#16130F"><circle cx="20" cy="40" r="6"/><circle cx="42" cy="40" r="6"/><circle cx="78" cy="40" r="6"/><circle cx="100" cy="40" r="6"/></g></svg></div><div class="gest-cap"><h4>Common region</h4><p>A shared box or background beats proximity. The dots are evenly spaced, yet the box makes two pairs. This is why cards work.</p></div></div>
+      <div class="rv rv-d2"><div class="gest"><svg viewBox="0 0 120 80"><g fill="none" stroke="#16130F" stroke-width="4"><path d="M10 10 L30 40 L10 70"/><path d="M110 10 L90 40 L110 70"/><path d="M45 10 L60 40 L45 70" stroke="#2340D8"/><path d="M75 10 L60 40 L75 70" stroke="#2340D8"/></g></svg></div><div class="gest-cap"><h4>Symmetry</h4><p>Symmetrical shapes read as one stable object. Symmetry feels calm and formal; asymmetry feels dynamic.</p></div></div>
+      <div class="rv rv-d3"><div class="gest"><svg viewBox="0 0 120 80"><g fill="#16130F"><circle cx="15" cy="40" r="6"/><circle cx="35" cy="40" r="6"/><circle cx="55" cy="40" r="6"/><circle cx="75" cy="40" r="6"/><circle cx="95" cy="40" r="6"/></g><g fill="#E2462B"><circle cx="35" cy="40" r="6"><animate attributeName="cy" values="40;22;40" dur="1.6s" repeatCount="indefinite"/></circle><circle cx="75" cy="40" r="6"><animate attributeName="cy" values="40;22;40" dur="1.6s" repeatCount="indefinite"/></circle></g></svg></div><div class="gest-cap"><h4>Common fate</h4><p>Things that move together belong together. That's why animated items in a group should move as one.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky">
+      <span class="kicker">2.3 · Scanning</span>
+      <h2 class="rv">People don't read. They <em class="serif-i">scan</em>.</h2>
+    </div>
+    <div>
+      <p class="lede rv">Eye-tracking studies show that on screens people mostly skim, in predictable shapes.</p>
+      <div class="grid g2 rv" style="margin:2rem 0">
+        <div class="card card--flat">
+          <svg viewBox="0 0 200 150" class="draw"><rect x="2" y="2" width="196" height="146" rx="8" fill="none" stroke="#16130F" stroke-width="2"/><g fill="#DDD3C0"><rect x="14" y="16" width="170" height="8"/><rect x="14" y="34" width="150" height="6"/><rect x="14" y="56" width="120" height="8"/><rect x="14" y="74" width="100" height="6"/><rect x="14" y="94" width="160" height="6"/><rect x="14" y="110" width="140" height="6"/><rect x="14" y="126" width="110" height="6"/></g><path d="M14 20 H184 M14 20 V60 H134 M14 60 V136" fill="none" stroke="#E2462B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/></svg>
+          <h4 style="margin-top:1rem">F-pattern</h4><p>On text-heavy pages: across the top, a shorter line across, then down the left. Put key words <strong>at the start</strong> of lines and headings.</p>
+        </div>
+        <div class="card card--flat">
+          <svg viewBox="0 0 200 150" class="draw"><rect x="2" y="2" width="196" height="146" rx="8" fill="none" stroke="#16130F" stroke-width="2"/><rect x="14" y="14" width="30" height="16" fill="#16130F"/><rect x="150" y="14" width="36" height="16" rx="8" fill="#DDD3C0"/><circle cx="100" cy="76" r="22" fill="#DDD3C0"/><rect x="14" y="120" width="60" height="14" fill="#DDD3C0"/><rect x="140" y="118" width="46" height="18" rx="9" fill="#2340D8"/><path d="M29 22 H168 L30 126 H163" fill="none" stroke="#E2462B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/></svg>
+          <h4 style="margin-top:1rem">Z-pattern</h4><p>On simple pages (posters, landing heroes): top-left → top-right → diagonal → bottom-right. Put the call-to-action where the Z <strong>ends</strong>.</p>
+        </div>
+      </div>
+      <div class="study rv">
+        <span class="study__label">Research · Nielsen Norman Group</span>
+        <p>Jakob Nielsen's 2006 eye-tracking of 232 users found the F-shaped pattern on text-heavy pages. NN/g's later work (2017) stresses it's a symptom of <em>bad</em> formatting. Good headings, bullets and bold keywords break it into easier patterns.</p>
+        <cite>Nielsen, J. (2006). F-Shaped Pattern For Reading Web Content. Pernice, K. (2017). F-Shaped Pattern of Reading on the Web: Misunderstood, But Still Relevant. nngroup.com</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <span class="kicker">2.4 · The laws</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:18ch">Eight psychology laws every designer quotes</h2>
+    <div class="grid g4" style="margin-top:2.5rem">
+      <div class="card rv"><span class="mono muted">Hick, 1952</span><h4>Hick's Law</h4><p>The more choices, the longer it takes to decide. Cut options. A menu with 4 items beats one with 14.</p></div>
+      <div class="card rv rv-d1"><span class="mono muted">Fitts, 1954</span><h4>Fitts's Law</h4><p>Big, close targets are faster to hit. Make important buttons large and near where the cursor or thumb already is.</p></div>
+      <div class="card rv rv-d2"><span class="mono muted">Miller 1956 · Cowan 2001</span><h4>Working memory</h4><p>We juggle only a few chunks at once (Miller said 7±2; newer research by Cowan says about 4). Chunk info: phone numbers are 3-3-4 for a reason.</p></div>
+      <div class="card rv rv-d3"><span class="mono muted">von Restorff, 1933</span><h4>Isolation effect</h4><p>The one thing that's different gets remembered. One highlighted pricing plan, one red button.</p></div>
+      <div class="card rv"><span class="mono muted">Kurosu &amp; Kashimura, 1995</span><h4>Aesthetic-usability</h4><p>People rate good-looking interfaces as easier to use, even when they're not. Beauty buys you forgiveness.</p></div>
+      <div class="card rv rv-d1"><span class="mono muted">Nielsen, 2000</span><h4>Jakob's Law</h4><p>Users spend most of their time on <em>other</em> sites, so they expect yours to work the same. Be original in style, conventional in behaviour.</p></div>
+      <div class="card rv rv-d2"><span class="mono muted">Ebbinghaus, 1885</span><h4>Serial position</h4><p>We remember the first and last items in a list best. Put key items at the start and end of navs and slides.</p></div>
+      <div class="card rv rv-d3"><span class="mono muted">Sweller, 1988</span><h4>Cognitive load</h4><p>Every extra element costs brain energy. Remove anything that doesn't help the message. Clutter is a tax.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky">
+      <span class="kicker">2.5 · First impressions</span>
+      <h2 class="rv">Simple and <em class="serif-i">familiar</em> wins</h2>
+    </div>
+    <div>
+      <div class="study rv">
+        <span class="study__label">Research · 50 milliseconds</span>
+        <p>Lindgaard and colleagues flashed web pages for just 50ms. People's ratings of visual appeal were highly consistent with ratings made after 500ms. The gut decision about looks happens almost instantly. Note: this measured <em>visual appeal</em>, not trust or buying.</p>
+        <cite>Lindgaard, G., Fernandes, G., Dudek, C., &amp; Brown, J. (2006). Behaviour &amp; Information Technology, 25(2), 115–126.</cite>
+      </div>
+      <div class="study rv">
+        <span class="study__label">Research · Google's complexity study</span>
+        <p>Researchers at Google and the University of Basel found that sites with <strong>low visual complexity</strong> and <strong>high prototypicality</strong> (looking like what people expect for that kind of site) were judged most beautiful, within 17–50ms.</p>
+        <cite>Tuch, A. N. et al. (2012). The role of visual complexity and prototypicality regarding first impression of websites. International Journal of Human-Computer Studies, 70(11).</cite>
+      </div>
+      <div class="study rv">
+        <span class="study__label">Theory · Three levels of emotion</span>
+        <p>Don Norman says people respond to design on three levels. <strong>Visceral</strong> is "ooh, pretty" (instant, about looks). <strong>Behavioural</strong> is "this is easy" (about use). <strong>Reflective</strong> is "this says something about me" (about meaning and identity). Great brands hit all three.</p>
+        <cite>Norman, D. A. (2004). Emotional Design: Why We Love (or Hate) Everyday Things. Basic Books.</cite>
+      </div>
+      <div class="eli eli--g rv">
+        <span class="eli__label">Explain like I'm 10</span>
+        <p>When you walk into a new classroom you decide "nice teacher" or "scary teacher" in about one second, just from how the room looks. Websites get judged the same way. A tidy room that looks like a normal classroom feels safest.</p>
+      </div>
+      <p class="rv">There's also an old industrial-design rule from Raymond Loewy called <strong>MAYA</strong>: "Most Advanced Yet Acceptable". Push things forward, but keep them familiar enough that people still get it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band-yellow">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--ink)">Your missions</span>
+    <h2 class="rv" style="margin-top:1rem">Homework</h2>
+    <ol class="steps" style="margin-top:2rem">
+      <li class="rv"><div><h4>Gestalt hunt</h4><p>Find one logo for each Gestalt principle. Hint: FedEx, WWF, NBC, Unilever, Spotify.</p></div></li>
+      <li class="rv"><div><h4>Five-second test</h4><p>Show a friend any homepage for 5 seconds, then hide it. Ask what the site was about and what they remember. That's a real UX research method.</p></div></li>
+      <li class="rv"><div><h4>Break Hick's Law</h4><p>Find an app or menu with too many choices. Sketch a version with half as many.</p></div></li>
+      <li class="rv"><div><h4>Draw the Z</h4><p>Screenshot three landing pages and draw where your eye actually went. Is it an F, a Z, or chaos?</p></div></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+<div id="next"></div>
+<footer id="foot"></footer>
+<script src="assets/app.js?v=2"></script>
+</body>
+</html>
